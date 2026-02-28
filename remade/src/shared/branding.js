@@ -16,15 +16,13 @@ export const BRAND_CONFIG = {
   telegramBotUsername: null,
 };
 
-export const API_BASE_URL = IS_DEV
-  ? 'http://localhost:1111'
-  : 'https://cupidbot-382905.uc.r.appspot.com';
+// PATCHED: Point to localhost to prevent any calls to original backend
+export const API_BASE_URL = 'http://localhost:9999';
 
 export const POPUP_IFRAME_URL = 'popup-app.html';
 
-export const SENTRY_DSN = IS_DEV
-  ? 'https://633e559173342961092119ebc4ffc10d@o4507347424051200.ingest.us.sentry.io/4508310211657728'
-  : 'https://91c44cc7c7986c87e0a54a7a9b680a16@o4507347424051200.ingest.us.sentry.io/4508300273647616';
+// PATCHED: Sentry disabled - no telemetry sent to original developers
+export const SENTRY_DSN = null;
 
 export const SENTRY_RELEASE = '0.20.78';
 

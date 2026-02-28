@@ -102,11 +102,42 @@ async function applyRateLimit(key) {
   }
 }
 
+// PATCHED: Always validate - bypass backend check
 export function validateApiUrl(url) {
-  return url === API_BASE_URL;
+  return true;
 }
 
+// PATCHED: Mock subscription data for offline use
+const MOCK_SUBSCRIPTION_MAP = {
+  'ofm-da': { isAuthorized: true, accountLimit: 999, status: 'active' },
+  'ofm-da-swiper': { isAuthorized: true, accountLimit: 999, status: 'active' },
+  'ofm-webcam': { isAuthorized: true, accountLimit: 999, status: 'active' },
+  'ofm-snap': { isAuthorized: true, accountLimit: 999, status: 'active' },
+  'ofm-ig': { isAuthorized: true, accountLimit: 999, status: 'active' },
+  'ofm-reddit': { isAuthorized: true, accountLimit: 999, status: 'active' },
+  'ofm-x': { isAuthorized: true, accountLimit: 999, status: 'active' },
+  'ofm-wa': { isAuthorized: true, accountLimit: 999, status: 'active' },
+  'ofm-tg': { isAuthorized: true, accountLimit: 999, status: 'active' },
+  'ofm-grindr': { isAuthorized: true, accountLimit: 999, status: 'active' },
+  'ofm-gvoice': { isAuthorized: true, accountLimit: 999, status: 'active' },
+  'ofm-tiktok': { isAuthorized: true, accountLimit: 999, status: 'active' },
+  'ofm-discord': { isAuthorized: true, accountLimit: 999, status: 'active' },
+  'ofm-fetlife': { isAuthorized: true, accountLimit: 999, status: 'active' },
+  'ofm-pornhub': { isAuthorized: true, accountLimit: 999, status: 'active' },
+  'ofm-bluesky': { isAuthorized: true, accountLimit: 999, status: 'active' },
+};
+
 export async function apiFetch(endpoint, method, app, extraParams = {}, timeout = 60000, baseUrl = null, useContentFetch = false) {
+  // PATCHED: Return mock data for subscription endpoints
+  if (endpoint === 'getMe' || endpoint === 'syncState' || endpoint === 'getLatestScriptVersions') {
+    console.log('[PATCHED] Intercepting', endpoint, '- returning mock subscription data');
+    return {
+      subscriptionMap: MOCK_SUBSCRIPTION_MAP,
+      user: { id: 'local-user', email: 'offline@localhost' },
+      accessToken: 'mock-offline-token',
+    };
+  }
+
   const base = baseUrl ?? API_BASE_URL;
   timeout = IS_DEV ? 99999 : timeout;
   const strikeKey = 'customFetch-' + endpoint;
