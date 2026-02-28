@@ -1,0 +1,12 @@
+{
+    "name": "CupidBot OFM",
+    "description": "#1 bot for OFM funneling",
+    "icon": "cupidbotofm.png",
+    "title": "CupidBotOFM.ai",
+    "subtitle": null,
+    "url": "https://cupidbotofm.ai",
+    "email": "admin@cupidbot.ai",
+    "telegramURL": "https://t.me/cupidbotg",
+    "stripePortal": "https://billing.stripe.com/p/login/5kA8wx1uwgWQgHmfYY",
+    "telegramBotUsername": "CupidBotAdminBot"
+}

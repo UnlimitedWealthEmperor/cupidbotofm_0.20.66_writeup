@@ -1,0 +1,111 @@
+export const FriendType = Object.freeze({
+  FRIEND: 0,
+  PENDING: 1,
+  BLOCKED: 2,
+  DELETED: 3,
+  FOLLOWING: 6,
+});
+
+export const ConversationType = Object.freeze({
+  ONEONONE: 0,
+  USERCREATEDGROUP: 1,
+});
+
+export const FriendLinkState = Object.freeze({
+  UNSET: 0,
+  ACCEPTED: 1,
+  IGNORED: 2,
+  SENT: 3,
+  PENDING: 4,
+});
+
+export const SnapStatus = {
+  UNKNOWN: 0,
+  READ: 1,
+  RELEASE: 2,
+  SAVE: 3,
+  UNSAVE: 4,
+  ERASE: 5,
+  SCREENSHOT: 6,
+  SCREEN_RECORD: 7,
+  REPLAY: 8,
+  REACTION: 9,
+  REMOVEREACTION: 10,
+  REVOKETRANSCRIPTION: 11,
+  ALLOWTRANSCRIPTION: 12,
+  ERASESAVEDSTORYMEDIA: 13,
+  EDITMESSAGE: 14,
+};
+
+export const MessageType = {
+  SNAP: 1,
+  CHAT: 2,
+  EXTERNAL_MEDIA: 3,
+  SHARE: 4,
+  NOTE: 5,
+  STICKER: 6,
+  STATUS: 7,
+  LOCATION: 8,
+  MEDIA: 9,
+  STATUS_SAVE_TO_CAMERA_ROLL: 9,
+  STATUS_CONVERSATION_CAPTURE_SCREENSHOT: 10,
+  STATUS_CONVERSATION_CAPTURE_RECORD: 11,
+  STATUS_CALL_MISSED_VIDEO: 12,
+  STATUS_CALL_MISSED_AUDIO: 13,
+  LIVE_LOCATION_SHARE: 14,
+  CREATIVE_TOOL_ITEM: 15,
+  FAMILY_CENTER_INVITE: 16,
+  FAMILY_CENTER_ACCEPT: 17,
+  FAMILY_CENTER_LEAVE: 18,
+  STATUS_PLUS_GIFT: 19,
+  PROMPT_LENS_RESPONSE: 20,
+  TINY_SNAP: 21,
+  STATUS_COUNTDOWN: 22,
+  MAP_REACTION: 23,
+};
+
+export const MessageTypeById = Object.entries(MessageType).reduce(
+  (acc, [name, id]) => { acc[id] = name; return acc; }, {}
+);
+
+export const CHAT_TYPE = 2;
+export const EXTERNAL_MEDIA_TYPE = 3;
+export const NOTE_TYPE = 5;
+export const MEDIA_TYPE = 9;
+
+export const SavePolicy = {
+  PROHIBITED: 0,
+  LIFETIME: 1,
+  VIEW_SESSION: 2,
+  BUNDLED_VIEW_SESSION: 3,
+};
+
+export const Provenance = {
+  SnapSourceSystem: {
+    UNSET: 0,
+    RICH_SNAP_PLATFORM_ADS: 1,
+    RICH_SNAP_PLATFORM_DISCOVER: 2,
+    STORY_CREATION_SERVICE: 3,
+    SPOTLIGHT_WEB_UPLOADER: 4,
+    SNAPCHAT_APP_CREATIVE_TOOLS: 5,
+    USER_GENERATOR: 6,
+    SNAPCHAT_WEB_APP: 7,
+    STORY_STUDIO_UGC: 8,
+    BUSINESS_API: 9,
+    ADS_MEDIA_THRU_BUSINESS_API: 10,
+    UNRECOGNIZED: -1,
+  },
+  AppSource: {
+    APP_SOURCE_UNSET: 0,
+    APP_SOURCE_CAMERA_ROLL: 1,
+    APP_SOURCE_MEMORIES: 2,
+    APP_SOURCE_CHAT: 3,
+    APP_SOURCE_PROFILE_SAVED_CHAT_MEDIA: 4,
+    APP_SOURCE_CAMERA: 5,
+    APP_SOURCE_SNAP_KIT: 6,
+    UNRECOGNIZED: -1,
+  },
+};
+
+export const FRIENDS_STORE_KEY = 'sdneirf';
+export const SEND_FROM_MOBILE_FLAG = 2;

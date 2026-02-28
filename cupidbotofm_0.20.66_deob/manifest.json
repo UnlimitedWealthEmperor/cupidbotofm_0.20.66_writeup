@@ -1,0 +1,110 @@
+{
+    "name": "CupidBot OFM",
+    "description": "#1 bot for OFM funneling",
+    "version": "0.20.66",
+    "manifest_version": 3,
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAto2YkWPif1tYcWYrNX+kSPZhSbqFu+oo52iekXhCFVKAlQdj4VZTE2kyIp4dPeCBqebX5vIyoJIA8o5FMtPoUNgAYUsSGREp1int4P7FjPSeuzV7KtUw6kCz5VLlb6I5vJkD7bAu0ymU3yg3H9FBRYkfBqZzUpcGIcKVficlgN15aFFUr5OsT6GeZ9xZdK8BcNqK3kTh7zX5iSLeM5UAfJxWiWt+hBci3szW+xx2TAbWg8qeh06BNIhDWZhd/O4QF8Pq5ud5UBsa/WtS4O8tZZYXtGc3LF1kWgTjYjQo6KEKTgO/lG0qL2ho1MqFsKwbikCU8av9Adw4W7PxAP9EmwIDAQAB",
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "action": {
+        "default_popup": "popup.html?isChromePopup=true",
+        "default_title": "CupidBot OFM",
+        "default_icon": "cupidbotofm.png"
+    },
+    "content_scripts": [
+        {
+            "all_frames": true,
+            "js": [
+                "contentScript.js"
+            ],
+            "matches": [
+                "*://*/*"
+            ],
+            "run_at": "document_idle",
+            "type": "module"
+        }
+    ],
+    "options_page": "options.html",
+    "permissions": [
+        "declarativeNetRequest",
+        "unlimitedStorage",
+        "webNavigation",
+        "webRequest",
+        "debugger",
+        "storage",
+        "tabs",
+        "accessibilityFeatures",
+        "alarms",
+        "system.display",
+        "topSites",
+        "bookmarks",
+        "readingList",
+        "proxy",
+        "system",
+        "enterprise",
+        "system.cpu",
+        "system.memory",
+        "printerProvider",
+        "desktopCapture",
+        "enterprise",
+        "scripting",
+        "pageCapture",
+        "offscreen",
+        "tabGroups",
+        "commands",
+        "tts",
+        "privacy",
+        "gcm",
+        "identity",
+        "declarativeContent",
+        "tabCapture",
+        "sessions",
+        "clipboardWrite",
+        "ttsEngine",
+        "dns",
+        "geolocation",
+        "fontSettings",
+        "webAuthenticationProxy",
+        "contextMenus",
+        "contentSettings",
+        "power",
+        "system.storage",
+        "idle",
+        "windows",
+        "management",
+        "notifications",
+        "userScripts",
+        "search",
+        "cookies",
+        "downloads",
+        "history",
+        "background",
+        "browsingData",
+        "clipboardRead",
+        "activeTab",
+        "sidePanel",
+        "nativeMessaging",
+        "declarativeNetRequestWithHostAccess",
+        "processes"
+    ],
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "icons": {
+        "16": "cupidbotofm.png",
+        "48": "cupidbotofm.png",
+        "128": "cupidbotofm.png"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "*"
+            ],
+            "matches": [
+                "*://*/*"
+            ]
+        }
+    ]
+}

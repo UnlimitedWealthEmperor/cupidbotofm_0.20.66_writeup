@@ -1,0 +1,341 @@
+.wingman-panel,
+.wingman-preview {
+    all: revert;
+    pointer-events: initial;
+    user-select: text;
+}
+
+div:has(a[data-e2e='tiktok-logo']) {
+    min-width: auto !important;
+}
+
+#homeContainer *[role='banner'] {
+    z-index: 1000;
+}
+
+.application-badoo .csms-navigation-bar {
+    left: unset !important;
+}
+
+.application-badoo .page {
+    position: absolute !important;
+}
+
+.gvPageRoot {
+    position: relative !important;
+    height: 100% !important;
+}
+
+.gvPageRoot > div > header {
+    position: relative !important;
+}
+
+.gvPageRoot > div:has(header) {
+    height: 65px !important;
+}
+
+.application-badoo #tabbar {
+    position: absolute;
+    z-index: 990;
+}
+
+.application-badoo .encounters-card {
+    width: -webkit-fill-available !important;
+}
+
+.application-badoo {
+    position: relative;
+}
+
+@scope (.wingman-panel,.wingman-preview) {
+    * {
+        word-break: initial;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    label {
+        color: revert !important;
+        font: revert;
+        margin: revert;
+    }
+    a {
+        color: revert;
+        text-decoration: revert;
+    }
+    a:hover {
+        color: revert;
+        text-decoration: revert;
+    }
+    blockquote {
+        padding: revert;
+        background: revert;
+        border-left: revert;
+    }
+    button {
+        overflow: revert;
+        height: revert;
+    }
+    input:disabled[role='switch'] {
+        opacity: 0;
+    }
+    address,
+    area,
+    article,
+    aside,
+    audio,
+    blockquote,
+    datalist,
+    details,
+    dl,
+    fieldset,
+    figure,
+    form,
+    input,
+    iframe,
+    img,
+    meter,
+    nav,
+    ol,
+    optgroup,
+    option,
+    output,
+    p,
+    pre,
+    progress,
+    ruby,
+    section,
+    textarea,
+    ul,
+    menu,
+    video {
+        margin-bottom: revert;
+    }
+    th {
+        background: unset;
+    }
+
+    tr:nth-child(2n) {
+        background: unset;
+    }
+
+    [type='checkbox'],
+    [type='radio'] {
+        z-index: 1000 !important;
+    }
+
+    :where(button),
+    :where(input):where([type='submit'], [type='reset'], [type='button']) {
+        background: unset;
+        border: unset;
+        border-radius: unset;
+    }
+
+    label {
+        color: unset;
+        font: unset;
+        letter-spacing: unset;
+        text-transform: unset;
+    }
+
+    .wingman-panel,
+    .wingman-preview {
+        user-select: revert;
+    }
+}
+
+.wingman-disabled {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.MuiSlider-valueLabel {
+    font-size: 14px !important;
+}
+
+.MuiSelect-indicator svg {
+    font-size: 18px !important;
+}
+
+.MuiAutocomplete-popupIndicator svg {
+    font-size: 22px !important;
+}
+
+.MuiButton-root svg {
+    font-size: 22px !important;
+}
+
+.MuiAlert-startDecorator svg {
+    font-size: 22px !important;
+}
+
+.MuiSvgIcon-root {
+    font-size: 22px !important;
+    /* padding: 12px !important; */
+}
+
+.MuiAutocomplete-option {
+    font-size: 14px !important;
+}
+
+.MuiTable-root {
+    font-size: 14px !important;
+}
+
+.MuiSlider-markLabel {
+    font-size: 12px !important;
+}
+
+.MuiButton-variantOutlined {
+    color: white !important;
+}
+
+.MuiButton-variantPlain {
+    color: white !important;
+}
+
+.MuiCheckbox-variantOutlined label {
+    color: white !important;
+    /* or any other color you want for the unchecked state */
+}
+
+.MuiOption-highlighted {
+    background-color: black !important;
+}
+
+.MuiTooltip-root {
+    font-size: 14px !important;
+}
+
+.wingman-panel {
+    --panelWidth: 350px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    z-index: 1000;
+    display: block;
+    position: fixed;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    /* background-color: #25252d; */
+}
+
+.wingman-panel *,
+.wingman-preview * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+@media (min-width: 900px) {
+    body #main .page,
+    body .App {
+        padding-right: var(--panelWidth);
+    }
+
+    body.hide-wingman-panel #main .page,
+    body.hide-wingman-panel .App {
+        padding-right: 0px;
+    }
+
+    .wingman-panel {
+        height: 100%;
+        top: 0px;
+        right: 0px;
+        width: var(--panelWidth);
+    }
+
+    .hide-wingman-panel .wingman-panel {
+        right: -var(--panelWidth);
+    }
+}
+
+@media (max-width: 899px) {
+    .wingman-panel {
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+.wingman-preview {
+    z-index: 10000;
+    position: fixed;
+    top: 12px;
+    right: 48px;
+    cursor: pointer;
+    padding: 0px;
+    min-height: 40px;
+}
+
+#main-nav {
+    z-index: 1000;
+}
+
+.base-Popper-root {
+    z-index: 10000 !important;
+    user-select: text !important;
+}
+
+.ph {
+    .supportsGridLayout,
+    #header,
+    #headerContainer,
+    .supportsGridLayout,
+    #header,
+    #headerMenuContainer,
+    #headerCampaignDiv {
+        min-width: unset !important;
+        max-width: unset !important;
+    }
+    .container {
+        min-width: unset !important;
+        max-width: unset !important;
+    }
+}
+
+.bluesky {
+    div:has(
+            + [data-testid='convoScreen'],
+            + [data-testid='messagesScreen'],
+            + [data-testid='messagesSettingsScreen'],
+            + [data-testid='HomeScreen']
+        ) {
+        display: none;
+    }
+
+    div:has(> main) {
+        background-color: var(--backgroundLight);
+        display: grid;
+        grid-template-columns: min-content auto min-content;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        width: 100dvw;
+    }
+
+    main,
+    nav,
+    nav + div {
+        position: initial !important;
+        transform: none !important;
+    }
+
+    main {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    nav {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    nav + div {
+        grid-area: 1 / 3 / 2 / 4;
+    }
+}

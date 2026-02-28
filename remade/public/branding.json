@@ -1,0 +1,13 @@
+{
+    "name": "RUSocial",
+    "description": "Professional Social Media Services",
+    "icon": "rusocial.png",
+    "title": "RUSocial",
+    "subtitle": null,
+    "url": "https://rusocial.io/purchase.html",
+    "email": null,
+    "telegramURL": "https://t.me/rusocial_io",
+    "discordURL": "https://discord.gg/rusocial",
+    "stripePortal": "https://billing.stripe.com/p/login/5kA8wx1uwgWQgHmfYY",
+    "telegramBotUsername": null
+}

@@ -1,0 +1,39 @@
+#react-root > div > div > div:nth-child(3) > header {
+    flex-grow: inherit !important;
+}
+
+#react-root > div > div > div:nth-child(3) > main > div {
+    width: -webkit-fill-available !important;
+}
+
+#react-root > div > div > div:nth-child(3) > main > div > div > div {
+    position: unset;
+}
+
+#react-root > div > div > div:nth-child(3) > main > div > div > div > section:nth-child(1) {
+    max-width: 300px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+@media screen and (min-width: 899px) {
+    #react-root > div > div > div:nth-child(3) > main > div > div > div > section:nth-child(1) {
+        min-width: 390px !important;
+        max-width: 390px !important;
+        width: 390px !important;
+    }
+
+    #react-root > div > div > div:nth-child(3) > main > div > div > div > section:nth-child(2) {
+        width: min-content !important;
+    }
+}
+
+#react-root > div > div > div:nth-child(3) > main > div > div > div > section:nth-child(2) {
+    flex-grow: 1;
+    width: auto;
+    max-width: none !important;
+}
+
+#react-root > div > div > div:nth-child(3) > main > div > div > div > section:nth-child(2) * {
+    max-width: none !important;
+}

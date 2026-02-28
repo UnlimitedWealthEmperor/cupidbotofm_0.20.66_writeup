@@ -1,0 +1,108 @@
+{
+    "name": "RUSocial",
+    "description": "Professional Social Media Services",
+    "version": "0.20.78",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "action": {
+        "default_popup": "popup.html?isChromePopup=true",
+        "default_title": "RUSocial",
+        "default_icon": "rusocial.png"
+    },
+    "content_scripts": [
+        {
+            "all_frames": true,
+            "js": [
+                "contentScript.js"
+            ],
+            "matches": [
+                "*://*/*"
+            ],
+            "run_at": "document_idle",
+            "type": "module"
+        }
+    ],
+    "options_page": "options.html",
+    "permissions": [
+        "declarativeNetRequest",
+        "unlimitedStorage",
+        "webNavigation",
+        "webRequest",
+        "debugger",
+        "storage",
+        "tabs",
+        "accessibilityFeatures",
+        "alarms",
+        "system.display",
+        "topSites",
+        "bookmarks",
+        "readingList",
+        "proxy",
+        "system",
+        "enterprise",
+        "system.cpu",
+        "system.memory",
+        "printerProvider",
+        "desktopCapture",
+        "scripting",
+        "pageCapture",
+        "offscreen",
+        "tabGroups",
+        "commands",
+        "tts",
+        "privacy",
+        "gcm",
+        "identity",
+        "declarativeContent",
+        "tabCapture",
+        "sessions",
+        "clipboardWrite",
+        "ttsEngine",
+        "dns",
+        "geolocation",
+        "fontSettings",
+        "webAuthenticationProxy",
+        "contextMenus",
+        "contentSettings",
+        "power",
+        "system.storage",
+        "idle",
+        "windows",
+        "management",
+        "notifications",
+        "userScripts",
+        "search",
+        "cookies",
+        "downloads",
+        "history",
+        "background",
+        "browsingData",
+        "clipboardRead",
+        "activeTab",
+        "sidePanel",
+        "nativeMessaging",
+        "declarativeNetRequestWithHostAccess",
+        "processes"
+    ],
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "icons": {
+        "16": "rusocial.png",
+        "48": "rusocial.png",
+        "128": "rusocial.png"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "*"
+            ],
+            "matches": [
+                "*://*/*"
+            ]
+        }
+    ]
+}
