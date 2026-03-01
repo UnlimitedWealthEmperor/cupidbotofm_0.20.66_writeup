@@ -1,0 +1,14 @@
+# CupidBot Local LLM Server Requirements
+
+# Web framework
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+
+# HTTP client for Ollama
+httpx>=0.26.0
+
+# Data validation
+pydantic>=2.5.0
+
+# Optional: for development
+python-dotenv>=1.0.0
